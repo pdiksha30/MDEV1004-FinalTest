@@ -1,22 +1,32 @@
 #!/usr/bin/env node
-/*
-Filename : server.ts, 
-Student’s Name : Diksha Patel,
-StudentID : 200540067, 
-Date : 6/23/23 
-*/
+
+/**
+ * Module dependencies.
+ */
+
 import app from './Server/Config/app';
 import debug from 'debug';
-debug('apitsc:server');
+debug('mdev1004-m2023-ice3:server');
 import http from 'http';
 import { AddressInfo } from 'net';
 import { HttpError } from 'http-errors';
 
+/**
+ * Get port from environment and store in Express.
+ */
 
 let port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
+/**
+ * Create HTTP server.
+ */
+
 let server = http.createServer(app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
 
 server.listen(port);
 server.on('error', onError);
